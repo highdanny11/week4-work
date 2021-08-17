@@ -1,0 +1,40 @@
+.design {
+  background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/week3/bg.png);
+  background-size: cover;
+  background-position: center;
+  padding-top: 60px;
+  padding-bottom: 80px;
+  @include rwd-py(40,56,32,40);
+  &-title {
+    font-weight: bold;
+    text-align: center;
+    @include rwd-text-sz(32,48,20);
+  }
+  &-doubleA,&-youth {
+    background-size: cover;
+    background-position: center;
+    height: 455px;
+    @include desktop {
+      height: 278px;
+    }
+    @include mobile {
+      height: 291px;
+    }
+  }
+  &-doubleA {
+    background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/week3/product-8.png);
+  }
+  &-youth {
+    background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/week3/product-9.png);
+  }
+  &-curtain {
+    background-color: rgba(256, 256, 256, 0.5);
+    color: $primary;
+    // backdrop-filter: blur(10px); 練練
+    & h3 {
+      font-size: 72px;
+      font-weight: bold;
+      @include rwd-text-sz(32,25);
+    }
+  }
+}

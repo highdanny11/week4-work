@@ -1,0 +1,73 @@
+@mixin replace-text { // 圖片取代文字
+  text-indent: 101%;
+  overflow: hidden;
+  white-space: nowrap;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/week3/logo.png);
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  &-title {
+    font-size: 24px;
+    @include rwd-text-sz (16,24)
+  }
+  &-body {
+    display: flex;
+    flex-direction: column;
+  }
+  &-img-top {
+    object-fit: cover;
+    width: 100%;
+  }
+}
+.brown {
+  background-color: #5F3E2D;
+  margin-right: 8px;
+  @include mobile{
+    margin-right: 4px;
+  }
+}
+.coffe {
+  background-color: #B75929;
+}
+.coffe,.brown {
+  width: 24px;
+  height: 24px;
+  @include mobile {
+    width: 16px;
+    height: 16px;
+  }
+  border-radius: 4px;
+}
+.page {
+  &-num {
+    font-size: 18px;
+    padding: 12px 16px;
+    outline: 1px solid $gray;
+    &:hover {
+      background-color: #000;
+      color: #fff;
+    }
+    @include mobile {
+      font-size: 16px;
+      line-height: 21px;
+      padding: 12px 15px;
+    }
+  }
+  &-pre,&-next {
+    font-size: 19px;
+    line-height: 29px;
+    padding: 11px 12px;
+    outline: 1px solid $gray;
+    &:hover {
+      background-color: #F2F2F2;
+    }
+    @include mobile {
+      font-size: 17px;
+      line-height: 24px;
+      padding: 10px 12px 11px 12px;
+    }
+  }
+}

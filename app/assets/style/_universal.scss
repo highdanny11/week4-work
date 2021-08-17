@@ -1,0 +1,248 @@
+@for $i from 0 through 10 {
+  // 8,16,24,32,40,48,56,64,72,80
+  @each $name, $value in $directions {
+    .p#{$name}-#{$i} {
+      padding-#{$value}: $space * $i;
+    }
+    .m#{$name}-#{$i} {
+      margin-#{$value}: $space * $i;
+    }
+  }
+}
+/*px py mx my*/
+@for $i from 0 through 10 {
+  .px-#{$i}{
+    padding-#{$left}: $space * $i;
+    padding-#{$right}: $space * $i;
+  }
+  .mx-#{$i}{
+    margin-#{$left}: $space * $i;
+    margin-#{$right}: $space * $i;
+  }
+  .py-#{$i}{
+    padding-#{$top}: $space * $i;
+    padding-#{$bottom}: $space * $i;
+  }
+  .my-#{$i}{
+    margin-#{$top}: $space * $i;
+    margin-#{$bottom}: $space * $i;
+  }
+}
+@each $key, $value in $extra-sapce {
+  @each $name, $direction in $directions {
+    .p#{$name}-#{$key} {
+      padding-#{$direction}: $value;
+    }
+    .m#{$name}-#{$key} {
+      margin-#{$direction}: $value;
+    }
+  }
+}
+/*px py mx my 額外*/
+@each $key, $value in $extra-sapce {
+  .px-#{$key}{
+    padding-#{$left}: $value;
+    padding-#{$right}: $value;
+  }
+  .mx-#{$key}{
+    margin-#{$left}: $value;
+    margin-#{$right}: $value;
+  }
+  .py-#{$key}{
+    padding-#{$top}: $value;
+    padding-#{$bottom}: $value;
+  }
+  .my-#{$key}{
+    margin-#{$top}: $value;
+    margin-#{$bottom}: $value;
+  }
+}
+@each $key, $value in $themes {
+  .bg-#{$key} {
+    background-color: $value;
+  }
+  .text-#{$key} {
+    color: $value;
+  }
+  .btn-#{$key} {
+    background-color: $value;
+  }
+}
+//額外補充定義的空間 // 992px screen padding&margin 不規律但常用設定推擠
+@each $key, $num in $extra-sapce {
+  //4:four,12:12px,20:20px,30:30px
+  @each $name, $value in $directionsLg {
+    @each $item, $direction in $value {
+      .p#{$item}-#{$name}-#{$key} {
+        @media (max-width: 992px) {
+          padding-#{$direction}: $num;
+        }
+      }
+      .m#{$item}-#{$name}-#{$key} {
+        @media (max-width: 992px) {
+          margin-#{$direction}: $num;
+        }
+      }
+    }
+  }
+}
+// 992px screen padding&margin all推擠
+@for $i from 0 through 10 {
+  @each $name, $value in $directionsLg {
+    @each $item, $direction in $value {
+      .p#{$item}-#{$name}-#{$i} {
+        @media (max-width: 992px) {
+          padding-#{$direction}: $space * $i;
+        }
+      }
+      .m#{$item}-#{$name}-#{$i} {
+        @media (max-width: 992px) {
+          margin-#{$direction}: $space * $i;
+        }
+      }
+    }
+  }
+}
+/* 992px px py mx my */
+@for $i from 0 through 10 {
+  .px-lg-#{$i} {
+    @include desktop {
+      padding-#{$left}: $space * $i;
+      padding-#{$right}: $space * $i;
+    }
+  }
+  .mx-lg-#{$i} {
+    @include desktop {
+      margin-#{$left}: $space * $i;
+      margin-#{$right}: $space * $i;
+    }
+  }
+  .py-lg-#{$i} {
+    @include desktop {
+      padding-#{$top}: $space * $i;
+      padding-#{$bottom}: $space * $i;
+    }
+  }
+  .my-lg-#{$i} {
+    @include desktop {
+      margin-#{$top}: $space * $i;
+      margin-#{$bottom}: $space * $i;
+    }
+  }
+}
+/* 992px px py mx my 額外*/
+@each $key, $value in $extra-sapce {
+  .px-lg-#{$key} {
+    @include desktop {
+      padding-#{$left}: $value;
+      padding-#{$right}: $value;
+    }
+  }
+  .mx-lg-#{$key} {
+    @include desktop {
+      margin-#{$left}: $value;
+      margin-#{$right}: $value;
+    }
+  }
+  .py-lg-#{$key} {
+    @include desktop {
+      padding-#{$top}: $value;
+      padding-#{$bottom}: $value;
+    }
+  }
+  .my-lg-#{$key} {
+    @include desktop {
+      margin-#{$top}: $value;
+      margin-#{$bottom}: $value;
+    }
+  }
+}
+//額外補充定義的空間 // 767px screen padding&margin 不規律但常用設定推擠
+@each $key, $num in $extra-sapce {
+  //4:four,12:12px,20:20px,30:30px
+  @each $name, $value in $directionsMd {
+    @each $item, $direction in $value {
+      .p#{$item}-#{$name}-#{$key} {
+        @media (max-width: 767px) {
+          padding-#{$direction}: $num;
+        }
+      }
+      .m#{$item}-#{$name}-#{$key} {
+        @media (max-width: 767px) {
+          margin-#{$direction}: $num;
+        }
+      }
+    }
+  }
+}
+// 767px screen padding&margin all推擠
+@for $i from 0 through 10 {
+  @each $name, $value in $directionsMd {
+    @each $item, $direction in $value {
+      .p#{$item}-#{$name}-#{$i} {
+        @media (max-width: 767px) {
+          padding-#{$direction}: $space * $i;
+        }
+      }
+      .m#{$item}-#{$name}-#{$i} {
+        @media (max-width: 767px) {
+          margin-#{$direction}: $space * $i;
+        }
+      }
+    }
+  }
+}
+/* 767px px py mx my */
+@for $i from 0 through 10 {
+  .px-md-#{$i} {
+    @include mobile {
+      padding-#{$left}: $space * $i;
+      padding-#{$right}: $space * $i;
+    }
+  }
+  .mx-md-#{$i} {
+    @include mobile {
+      margin-#{$left}: $space * $i;
+      margin-#{$right}: $space * $i;
+    }
+  }
+  .py-md-#{$i} {
+    @include mobile {
+      padding-#{$top}: $space * $i;
+      padding-#{$bottom}: $space * $i;
+    }
+  }
+  .my-md-#{$i} {
+    @include mobile {
+      margin-#{$top}: $space * $i;
+      margin-#{$bottom}: $space * $i;
+    }
+  }
+}
+/* 767px px py mx my 額外*/
+@each $key, $value in $extra-sapce {
+  .px-md-#{$key} {
+    @include mobile {
+      padding-#{$left}: $value;
+      padding-#{$right}: $value;
+    }
+  }
+  .mx-md-#{$key} {
+    @include mobile {
+      margin-#{$left}: $value;
+      margin-#{$right}: $value;
+    }
+  }
+  .py-md-#{$key} {
+    @include mobile {
+      padding-#{$top}: $value;
+      padding-#{$bottom}: $value;
+    }
+  }
+  .my-md-#{$key} {
+    @include mobile {
+      margin-#{$top}: $value;
+      margin-#{$bottom}: $value;
+    }
+  }
+}

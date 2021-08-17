@@ -1,0 +1,58 @@
+.wrap {
+  padding-top: 96px;
+  padding-bottom: 160px;
+  @include desktop {
+    padding-top: 60px;
+    padding-bottom: 96px;
+  }
+  @include mobile {
+    padding-top: 28px;
+    padding-bottom: 56px;
+  }
+}
+.store-local-list{
+  & li {
+    font-size: 20px;
+    @include desktop {
+      font-size: 14px;
+    }
+    & .material-icons-outlined {
+      @include desktop {
+        font-size: 20px;
+        line-height: 1;
+      }
+    }
+  }
+}
+.store-local-img {
+  height: 224px;
+  @include desktop {
+    height: 164px;
+  }
+}
+.store-local-btn {
+  transition: all 0.5s ease-in;
+  &:hover {
+    background-color: $primary;
+  }
+}
+.select {
+  & select {
+    padding: 11px 19px;
+    font-size: 18px;
+    line-height: 26px;
+    color: #495057;
+    @include rwd-text-sz(16,24,14,24);
+    @include desktop {
+      padding: 10px 16px;
+    }
+    @include mobile {
+      padding: 7px 16px;
+    }
+  }
+  & label {
+    font-size: 24px;
+    line-height: 30px;
+    @include rwd-text-sz(16,30,14,30);
+  }
+}

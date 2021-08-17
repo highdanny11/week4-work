@@ -1,0 +1,70 @@
+$space: 8px;
+$directions: (
+  s: left,
+  e: right,
+  t: top,
+  b: bottom,
+);
+$directionsLg: (
+  lg: (
+    s: left,
+    e: right,
+    t: top,
+    b: bottom,
+  ),
+);
+$directionsMd: (
+  md: (
+    s: left,
+    e: right,
+    t: top,
+    b: bottom,
+  ),
+);
+$top:top;
+$bottom:bottom;
+$left:left;
+$right:right;
+$extra-sapce: (
+  // 遇到特別空間設定就往這裡加
+  "4x": 4px,
+  "4x3": 12px,
+  "18": 18px,
+  "20": 20px,
+  "30": 30px,
+  "36": 36px
+);
+$primary: #aa0601;
+$secondary: #aa06010d;
+$danger: #650300;
+$dgray: #212529;
+$gray: #555555;
+$lightgray: #6c6c6c;
+$info: #5f3e2d;
+$warning: #b75929;
+$white: #fff;
+$dark: #000;
+$themes: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "danger": $danger,
+  "dgray": $dgray,
+  // 門市據點顏色
+  "gray": $gray,
+  // 頁碼文字,blog文字
+  "lightgray": $lightgray,
+  // date文字顏色
+  "info": $info,
+  // 重咖啡色 (標籤)
+  "warning": $warning,
+  // 淺咖啡色 (標籤),,,,
+  "white": $white,
+  "dark": $dark,
+);
+/*格線系統變數*/
+$gutter-width:30px;
+$gutter-num:12;
+%col {
+  padding-left: 15px;
+  padding-right: 15px;
+}

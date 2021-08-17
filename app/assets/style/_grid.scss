@@ -1,0 +1,23 @@
+/*基本*/
+@for $i from 1 through $gutter-num {
+  .col-#{$i} {
+    @extend %col;
+    width: 100% * ($i / $gutter-num);
+  }
+}
+/*992px*/
+@for $i from 1 through $gutter-num {
+  .col-lg-#{$i} {
+    @include desktop {
+      width: 100% * ($i / $gutter-num);
+    }
+  }
+}
+/*767px*/
+@for $i from 1 through $gutter-num {
+  .col-md-#{$i} {
+    @include mobile {
+      width: 100% * ($i / $gutter-num);
+    }
+  }
+}

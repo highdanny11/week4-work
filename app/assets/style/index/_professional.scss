@@ -1,0 +1,29 @@
+.professional {
+  padding-top: 60px;
+  @include rwd-py (40,24,32,8);
+  &-title {
+    font-weight: bold;
+    text-align: center;
+    @include rwd-text-sz(32,48,24);
+  }
+}
+.professional-card {
+  &-img {
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 16px;
+  }
+  &-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+  & p {
+    margin-bottom: 80px;
+    @include desktop {
+      margin-bottom: 32px; // 加上父層24px,手機父層8px
+    }
+  }
+}

@@ -1,0 +1,24 @@
+.banner {
+  background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/week3/banner.png);
+  background-size: cover;
+  background-position:center;
+  height: 840px;
+  @include desktop {
+    background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/week3/banner-sm.png);
+  }
+  @include mobile {
+    height: 394px;
+  }
+  &-title {
+    font-size: 64px;
+    font-weight: bold;
+    text-align: right;
+    font-family: 'Source Han Sans';
+    @include rwd-text-sz(48,72,32);
+    & span {
+      font-size: 36px;
+      font-weight: normal;
+      @include rwd-text-sz(20,30,16);
+    }
+  }
+}

@@ -1,0 +1,77 @@
+.footer {
+  background-color: $primary;
+  &-wrap {
+    padding-top: 32px;
+    padding-bottom: 39px;
+    @include desktop {
+      padding-bottom: 21px;
+    }
+    @include mobile {
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+  }
+  &-main {
+    @include mobile {
+      border-bottom: 1px solid #fff;
+      padding-bottom: 24px;
+      margin-bottom: 16px;
+    }
+  }
+  &-list {
+    @include mobile {
+      display: none;
+    }
+    & li a {
+      color: #fff;
+      transition: all 0.5s ease;
+      &:hover {
+        color: orange;
+      }
+    }
+  }
+  &-contact li a {
+    color: #fff;
+    font-size: 36px;
+    line-height: 54px;
+    transition: all 0.5s ease;
+    &:hover {
+      color: orange;
+    }
+    @include rwd-text-sz(20, 30, 16);
+  }
+  &-icons .footer-icon {
+    @include mobile {
+      object-fit: cover;
+      width: 24px;
+      height: 24px;
+    }
+  }
+  &-icon {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    transition: all 0.5s ease;
+    &:hover {
+      transform: scale(1.2);
+    }
+    @include desktop {
+      width: 24px;
+      height: 24px;
+    }
+    @include mobile {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  &-copyright {
+    @include mobile {
+      display: block;
+    }
+    & ul {
+      @include mobile {
+        display: block;
+      }
+    }
+  }
+}
